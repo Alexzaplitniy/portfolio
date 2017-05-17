@@ -30,6 +30,8 @@ import { DevPreviewCardComponent } from './components/dev-preview-card/dev-previ
 import { DevPreviewListComponent } from './components/dev-preview-list/dev-preview-list.component';
 import { EffectsModule } from '@ngrx/effects';
 import { DevelopersCollectionEffect } from './store/developers/developers.effect';
+import { DevSelectedPageComponent } from './containers/dev-selected-page/dev-selected-page.component';
+import { DevDetailComponent } from './components/dev-detail/dev-detail.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +41,8 @@ import { DevelopersCollectionEffect } from './store/developers/developers.effect
     DevPreviewListComponent,
     DevListPageComponent,
     DevViewPageComponent,
+    DevSelectedPageComponent,
+    DevDetailComponent,
   ],
   imports: [
     BrowserModule,

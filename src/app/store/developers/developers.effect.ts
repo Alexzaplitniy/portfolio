@@ -13,7 +13,7 @@ export class DevelopersCollectionEffect {
   constructor(
     private actions$: Actions,
     private devService: DevelopersService
-  ) { }
+  ) {}
 
   @Effect()
   loadCollection$: Observable<Action> = this.actions$

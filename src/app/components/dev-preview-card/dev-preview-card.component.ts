@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { DeveloperInterface } from '../../models/developer/developer.interface';
 
 @Component({
@@ -9,6 +9,6 @@ import { DeveloperInterface } from '../../models/developer/developer.interface';
 export class DevPreviewCardComponent {
   @Input() developer: DeveloperInterface;
 
-  constructor() { }
+  constructor() {}
 
 }

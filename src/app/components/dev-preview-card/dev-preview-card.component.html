@@ -1,12 +1,14 @@
-<md-card >
+<md-card>
   <md-card-title>{{ developer.name }}</md-card-title>
   <md-card-content>
     <img [src]="developer.photo">
   </md-card-content>
   <md-card-content>
-    <p>Hey! It looks like this page doesn't exist yet.</p>
+    <div>
+      <span *ngFor="let tag of developer.tags">{{ tag }}</span>
+    </div>
   </md-card-content>
   <md-card-actions>
-    <button md-raised-button color="primary" routerLink="/">read more</button>
+    <button md-raised-button color="primary" routerLink="developer/{{ developer.slug }}">read more</button>
   </md-card-actions>
 </md-card>

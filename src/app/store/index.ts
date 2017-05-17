@@ -7,7 +7,7 @@ import { compose } from '@ngrx/core/compose';
 import { storeFreeze } from 'ngrx-store-freeze';
 import { combineReducers } from '@ngrx/store';
 
-import * as fromDevelopers from './developers/developers';
+import * as fromDevelopers from './developers/developers.reducer';
 
 export interface State {
   developers: fromDevelopers.State;
@@ -35,3 +35,4 @@ export const getDevelopersState = (state: State) => state.developers;
 export const getDevelopersLoaded = createSelector(getDevelopersState, fromDevelopers.getLoaded);
 export const getDevelopersLoading = createSelector(getDevelopersState, fromDevelopers.getLoading);
 export const getDevelopersList = createSelector(getDevelopersState, fromDevelopers.getList);
+export const getSelectedDeveloper = createSelector(getDevelopersState, fromDevelopers.getSelected);
