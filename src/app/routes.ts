@@ -11,11 +11,7 @@ export const routes: Routes = [
   },
   {
     path: 'developer/:slug',
-    canActivate: [DeveloperExistsGuard],
-    component: DevViewPageComponent
-  },
-  {
-    path: 'user/:slug',
+    canActivate: [ DeveloperExistsGuard ],
     component: DevViewPageComponent
   },
   {

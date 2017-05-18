@@ -28,7 +28,7 @@ export class LoadFailAction implements Action {
 /**
  * Selected Developers Actions
  */
-export const SELECT = '[Developers] Select';
+export const SELECT = '[Developer] Select';
 
 export class SelectAction implements Action {
   readonly type = SELECT;

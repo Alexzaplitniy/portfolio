@@ -33,6 +33,7 @@ import { DevSelectedPageComponent } from './containers/dev-selected-page/dev-sel
 import { DevPreviewCardComponent } from './components/dev-preview-card/dev-preview-card.component';
 import { DevPreviewListComponent } from './components/dev-preview-list/dev-preview-list.component';
 import { DevDetailComponent } from './components/dev-detail/dev-detail.component';
+import { TestComponent } from './containers/test/test.component';
 
 @NgModule({
   declarations: [
@@ -44,6 +45,7 @@ import { DevDetailComponent } from './components/dev-detail/dev-detail.component
     DevViewPageComponent,
     DevSelectedPageComponent,
     DevDetailComponent,
+    TestComponent,
   ],
   imports: [
     CommonModule,

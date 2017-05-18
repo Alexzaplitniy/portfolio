@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { DeveloperInterface } from '../../models/developer/developer.interface';
 import { Store } from '@ngrx/store';
@@ -15,11 +15,15 @@ import * as fromRoot from '../../store';
       ></app-dev-detail>`
   ,
 })
-export class DevSelectedPageComponent {
+export class DevSelectedPageComponent implements OnInit{
   developer$: Observable<DeveloperInterface>;
 
-  constructor(private store: Store<fromRoot.State>) {
-    this.developer$ = this.store.select(fromRoot.getSelectedDeveloper);
+  constructor(
+    private store: Store<fromRoot.State>
+  ) {}
+
+  ngOnInit(): void {
+    this.store.select(fromRoot.getSelectedDeveloper);
   }
 
 }

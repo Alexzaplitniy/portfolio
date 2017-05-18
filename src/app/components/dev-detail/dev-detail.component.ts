@@ -7,13 +7,6 @@ import { DeveloperInterface } from '../../models/developer/developer.interface';
   templateUrl: './dev-detail.component.html',
   styleUrls: ['./dev-detail.component.scss']
 })
-export class DevDetailComponent implements OnInit {
-  @Input() developer: any;
-
-  constructor() { }
-
-  ngOnInit() {
-    // console.log(this.developer, '@Input()');
-  }
-
+export class DevDetailComponent {
+  @Input() developer: DeveloperInterface;
 }
