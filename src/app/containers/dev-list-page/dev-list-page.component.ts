@@ -6,6 +6,7 @@ import * as fromRoot from '../../store';
 import { DeveloperInterface } from '../../models/developer/developer.interface';
 
 @Component({
+  moduleId: module.id,
   selector: 'app-dev-list-page',
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './dev-list-page.component.html'

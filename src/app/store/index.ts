@@ -33,6 +33,5 @@ export function reducer(state: any, action: any) {
 export const getDevelopersState = (state: State) => state.developers;
 
 export const getDevelopersLoaded = createSelector(getDevelopersState, fromDevelopers.getLoaded);
-export const getDevelopersLoading = createSelector(getDevelopersState, fromDevelopers.getLoading);
 export const getDevelopersList = createSelector(getDevelopersState, fromDevelopers.getList);
 export const getSelectedDeveloper = createSelector(getDevelopersState, fromDevelopers.getSelected);

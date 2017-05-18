@@ -51,11 +51,8 @@ export function reducer(state = initialState, action: developers.Actions): State
 
 
 export const getLoaded = (state: State) => state.loaded;
-export const getLoading = (state: State) => state.loading;
 export const getList = (state: State) => state.list;
 export const getSelectedId = (state: State) => state.selectedDeveloper;
 export const getSelected = createSelector(getList, getSelectedId, (list, slug) => {
-  const item = list.filter(item => item.slug === slug);
-  console.log(item, 'item');
-  return item;
+  return list.filter(item => item.slug === slug)[0];
 });

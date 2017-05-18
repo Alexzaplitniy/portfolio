@@ -6,17 +6,17 @@ import { Store } from '@ngrx/store';
 import * as fromRoot from '../../store';
 
 @Component({
+  moduleId: module.id,
   selector: 'app-dev-selected-page',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
       <app-dev-detail
               [developer]="developer$ | async"
-              
       ></app-dev-detail>`
   ,
 })
 export class DevSelectedPageComponent {
-  developer$: Observable<any>;
+  developer$: Observable<DeveloperInterface>;
 
   constructor(private store: Store<fromRoot.State>) {
     this.developer$ = this.store.select(fromRoot.getSelectedDeveloper);
