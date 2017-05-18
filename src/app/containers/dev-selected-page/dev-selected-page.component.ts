@@ -23,7 +23,7 @@ export class DevSelectedPageComponent implements OnInit{
   ) {}
 
   ngOnInit(): void {
-    this.store.select(fromRoot.getSelectedDeveloper);
+    this.developer$ = this.store.select(fromRoot.getSelectedDeveloper);
   }
 
 }
