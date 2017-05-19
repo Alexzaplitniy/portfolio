@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
 import { DeveloperInterface } from '../models/developer/developer.interface';
-import { combineLatest } from 'rxjs/observable/combineLatest';
 import 'rxjs/add/operator/mergeMap';
 
 @Injectable()
