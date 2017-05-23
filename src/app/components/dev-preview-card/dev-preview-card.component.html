@@ -1,14 +1,17 @@
-<md-card>
-  <md-card-title>{{ developer.name }}</md-card-title>
-  <md-card-content>
-    <img [src]="developer.photo">
-  </md-card-content>
-  <md-card-content>
-    <div>
-      <span *ngFor="let tag of developer.tags">{{ tag }}</span>
-    </div>
-  </md-card-content>
-  <md-card-actions>
-    <button md-raised-button color="primary" routerLink="developer/{{ developer.slug }}">read more</button>
-  </md-card-actions>
+<md-card class="preview-card" *ngIf="developer">
+    <md-card-title>{{ developer.name }}</md-card-title>
+
+    <md-card-content>
+        <picture>
+            <img [src]="developer.photo">
+        </picture>
+
+        <div>
+            <span *ngFor="let tag of developer.tags">{{ tag }}</span>
+        </div>
+    </md-card-content>
+
+    <md-card-actions>
+        <button md-raised-button color="primary" routerLink="developer/{{ developer.slug }}">read more</button>
+    </md-card-actions>
 </md-card>

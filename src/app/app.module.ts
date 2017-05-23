@@ -33,7 +33,8 @@ import { DevSelectedPageComponent } from './containers/dev-selected-page/dev-sel
 import { DevPreviewCardComponent } from './components/dev-preview-card/dev-preview-card.component';
 import { DevPreviewListComponent } from './components/dev-preview-list/dev-preview-list.component';
 import { DevDetailComponent } from './components/dev-detail/dev-detail.component';
-import { TestComponent } from './containers/test/test.component';
+import { SearchPipe } from './pipes/searh.pipe';
+import { SearchComponent } from './components/search/search.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,8 @@ import { TestComponent } from './containers/test/test.component';
     DevViewPageComponent,
     DevSelectedPageComponent,
     DevDetailComponent,
-    TestComponent,
+    SearchPipe,
+    SearchComponent,
   ],
   imports: [
     CommonModule,
