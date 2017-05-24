@@ -1,6 +1,50 @@
-<div *ngIf="developer">
-  <p>
-    dev-detail works!
-  </p>
-  <p>{{ developer.name }}</p>
-</div>
+<md-card class="detail-card" *ngIf="developer">
+    <md-card-header flex>
+        <picture class="detail-card__picture">
+            <img [src]="developer.photo" [alt]="developer.name" >
+        </picture>
+
+        <md-card-content>
+            <md-card-title>
+                <h1 class="detail-card__title">{{ developer.name }}</h1>
+            </md-card-title>
+
+            <md-list>
+                <h3 md-subheader>Technical skills</h3>
+
+                <md-list-item> js </md-list-item>
+                <md-list-item> php </md-list-item>
+                <md-list-item> laravel </md-list-item>
+            </md-list>
+
+            <div>
+                Experience: 2 years
+            </div>
+
+        </md-card-content>
+    </md-card-header>
+
+    <md-card-content>
+
+        <h2 md-subheader>Portfolio</h2>
+        
+        <div *ngFor="let project of developer.projects">
+            <md-card class="portfolio-item" *ngIf="project">
+                <div flex>
+                    <picture class="portfolio-item__picture">
+                        <img [src]="project.photo" [alt]="project.name">
+                    </picture>
+
+                    <md-card-content class="portfolio-item__content">
+                        <md-card-title>
+                            <h2>{{ project.name }}</h2>
+                        </md-card-title>
+
+                        <div>{{ project.description }}</div>
+                    </md-card-content>
+                </div>
+            </md-card>
+        </div>
+        
+    </md-card-content>
+</md-card>

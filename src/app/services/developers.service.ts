@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
 import { DeveloperInterface } from '../models/developer/developer.interface';
 import 'rxjs/add/operator/mergeMap';
+import { PortfolioInterface } from '../models/porfolio/portfolio.interface';
 
 @Injectable()
 export class DevelopersService {
@@ -17,7 +18,7 @@ export class DevelopersService {
   private init() {
     this.list = this.db.list('devList')
       .mergeMap((res) =>
-        this.db.list('tags').map((tags) => res.map((item) => {
+        this.db.list('tags').map((tags) => res.map((item: DeveloperInterface) => {
           const _tags: string[] = [];
 
           item.tags.map((tag) => _tags.push(tags[tag].$value));
@@ -25,6 +26,16 @@ export class DevelopersService {
 
           return item;
         }))
+      )
+      .mergeMap((res) =>
+        this.db.list('/portfolio')
+          .map((portfolio: PortfolioInterface[]) => res.map((item: DeveloperInterface) => {
+            item.projects =  portfolio.filter((work: PortfolioInterface) => {
+              return work.developers.includes(item.$key);
+            });
+
+            return item;
+          }))
       );
   }
 

@@ -1,17 +1,23 @@
 <md-card class="preview-card" *ngIf="developer">
-    <md-card-title>{{ developer.name }}</md-card-title>
-
-    <md-card-content>
-        <picture>
+    <md-card-content class="preview-card__wrap">
+        <picture class="preview-card__photo-block">
             <img [src]="developer.photo">
         </picture>
 
-        <div>
-            <span *ngFor="let tag of developer.tags">{{ tag }}</span>
+        <div class="preview-card__content">
+            <md-card-title>{{ developer.name }}</md-card-title>
+
+            <md-card-content>{{ developer.description }}</md-card-content>
+
+            <md-card-content>Position: {{ developer.position }}</md-card-content>
+
+            <div flex jcsb>
+                <md-chip-list>
+                    <md-chip *ngFor="let tag of developer.tags">{{ tag }}</md-chip>
+                </md-chip-list>
+
+                <button md-raised-button color="primary" routerLink="developer/{{ developer.slug }}">read more</button>
+            </div>
         </div>
     </md-card-content>
-
-    <md-card-actions>
-        <button md-raised-button color="primary" routerLink="developer/{{ developer.slug }}">read more</button>
-    </md-card-actions>
 </md-card>

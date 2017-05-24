@@ -1,0 +1,31 @@
+<md-card>
+    <form novalidate [formGroup]="user">
+        <md-input-container class="form__input-container">
+            <input type="text" mdInput placeholder="Developer name" name="name" formControlName="name"
+                   class="form__input">
+        </md-input-container>
+
+        <md-input-container class="form__input-container">
+            <input type="text" mdInput placeholder="Slug" name="slug" formControlName="slug" class="form__input">
+        </md-input-container>
+
+        <md-input-container class="form__input-container">
+            <input type="text" mdInput placeholder="Position" name="position" formControlName="position"
+                   class="form__input">
+        </md-input-container>
+
+        <md-select placeholder="State" name="tags" formControlName="tags" class="form__input">
+            <md-option value="0">php</md-option>
+            <md-option value="1">js</md-option>
+        </md-select>
+
+        <md-input-container class="form__input-container">
+            <textarea  mdInput minRows="6" md-autosize placeholder="Description" name="description"
+                       formControlName="description" class="form__input"></textarea>
+        </md-input-container>
+
+        <button type="submit" md-raised-button [disabled]="!user.valid">
+            Add new developer
+        </button>
+    </form>
+</md-card>

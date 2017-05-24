@@ -1,4 +1,15 @@
 .preview-card {
   margin-bottom: 20px;
 
+  &__wrap {
+    display: flex;
+  }
+
+  &__content {
+    width: 100%;
+  }
+
+  &__photo-block {
+    margin-right: 24px;
+  }
 }

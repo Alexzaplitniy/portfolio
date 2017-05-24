@@ -15,6 +15,7 @@ export class SearchPipe implements PipeTransform {
       result = value.filter((item: DeveloperInterface) => {
         return item.name.toLowerCase().includes(q) ||
           item.position.toLowerCase().includes(q) ||
+          item.description.toLowerCase().includes(q) ||
           Boolean(item.tags.filter((tag: string) => tag.toLowerCase().includes(q)).length)
       });
     } else {

@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { CommonModule } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { MaterialModule } from '@angular/material';
 import { RouterModule } from '@angular/router';
@@ -35,6 +35,9 @@ import { DevPreviewListComponent } from './components/dev-preview-list/dev-previ
 import { DevDetailComponent } from './components/dev-detail/dev-detail.component';
 import { SearchPipe } from './pipes/searh.pipe';
 import { SearchComponent } from './components/search/search.component';
+import { AdminComponent } from './containers/admin/admin.component';
+import { AddDeveloperComponent } from './containers/admin/add-developer/add-developer.component';
+import { AddDeveloperFormComponent } from './components/admin/add-developer-form/add-developer-form.component';
 
 @NgModule({
   declarations: [
@@ -48,6 +51,9 @@ import { SearchComponent } from './components/search/search.component';
     DevDetailComponent,
     SearchPipe,
     SearchComponent,
+    AdminComponent,
+    AddDeveloperComponent,
+    AddDeveloperFormComponent,
   ],
   imports: [
     CommonModule,
@@ -56,6 +62,7 @@ import { SearchComponent } from './components/search/search.component';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpModule,
     MaterialModule,
     RouterModule.forRoot(routes, { useHash: true }),

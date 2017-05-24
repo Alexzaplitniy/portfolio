@@ -5,7 +5,9 @@ export class Developer implements DeveloperInterface{
     public name,
     public slug,
     public photo,
+    public description,
     public position,
     public tags,
+    public projects = []
   ){}
 }
