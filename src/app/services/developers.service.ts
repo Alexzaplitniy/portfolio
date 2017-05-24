@@ -29,13 +29,15 @@ export class DevelopersService {
       )
       .mergeMap((res) =>
         this.db.list('/portfolio')
-          .map((portfolio: PortfolioInterface[]) => res.map((item: DeveloperInterface) => {
-            item.projects =  portfolio.filter((work: PortfolioInterface) => {
-              return work.developers.includes(item.$key);
-            });
+          .map((portfolio: Array<any>) => {
+            return res.map((item: DeveloperInterface) => {
+              item.projects =  portfolio.filter((work: PortfolioInterface) => {
+                return work.developers.includes(item.$key);
+              });
 
-            return item;
-          }))
+              return item;
+            });
+          })
       );
   }
 
