@@ -1,7 +1,6 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { DeveloperInterface } from '../../../models/developer/developer.interface';
-import { Developer } from '../../../models/developer/developer';
 
 @Component({
   selector: 'app-add-developer-form',
@@ -22,7 +21,7 @@ export class AddDeveloperFormComponent implements OnInit {
       slug: ['', [Validators.required, Validators.minLength(2)]],
       position: ['', [Validators.required, Validators.minLength(2)]],
       description: ['', [Validators.required, Validators.minLength(2)]],
-      tags: ['', [Validators.required]],
+      tags: this.fb.array([])
     });
   }
 

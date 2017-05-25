@@ -14,9 +14,9 @@
                    class="form__input">
         </md-input-container>
 
-        <md-select placeholder="State" name="tags" formControlName="tags" class="form__input">
-            <md-option value="0">php</md-option>
-            <md-option value="1">js</md-option>
+        <md-select placeholder="State" name="tags" formArrayName="tags" class="form__input">
+            <md-option value="0" formGroupName="0">php</md-option>
+            <md-option value="1" formGroupName="1">js</md-option>
         </md-select>
 
         <md-input-container class="form__input-container">
