@@ -1,3 +1,5 @@
+import { PortfolioInterface } from '../porfolio/portfolio.interface';
+
 export interface DeveloperInterface {
   $key?: string;
   name: string;
@@ -6,5 +8,5 @@ export interface DeveloperInterface {
   photo: string;
   position: string;
   tags: string[];
-  projects?: Array<DeveloperInterface>;
+  projects?: Array<PortfolioInterface>;
 }

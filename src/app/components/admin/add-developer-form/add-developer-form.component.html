@@ -1,5 +1,5 @@
 <md-card>
-    <form novalidate [formGroup]="user">
+    <form novalidate [formGroup]="user" (submit)="onSubmit()">
         <md-input-container class="form__input-container">
             <input type="text" mdInput placeholder="Developer name" name="name" formControlName="name"
                    class="form__input">

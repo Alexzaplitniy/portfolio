@@ -35,7 +35,7 @@ export function reducer(state = initialState, action: developers.Actions): State
     case developers.SELECT:
       return {...state, selectedDeveloper: action.payload};
 
-    case developers.ADD_DEVELOPER:
+    case developers.ADD_DEVELOPER_SUCCESS:
       return {
         ...state,
         list: [...state.list, action.payload]

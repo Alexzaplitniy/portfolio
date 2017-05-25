@@ -5,6 +5,7 @@ import { DevViewPageComponent } from './containers/dev-view-page/dev-view-page.c
 import { DeveloperExistsGuard } from './guards/developer-exists';
 import { AdminComponent } from './containers/admin/admin.component';
 import { AddDeveloperFormComponent } from './components/admin/add-developer-form/add-developer-form.component';
+import { AddDeveloperComponent } from './containers/admin/add-developer/add-developer.component';
 
 export const routes: Routes = [
   {
@@ -23,7 +24,7 @@ export const routes: Routes = [
     children: [
       {
         path: 'add-developer',
-        component: AddDeveloperFormComponent,
+        component: AddDeveloperComponent,
       }
     ]
   },

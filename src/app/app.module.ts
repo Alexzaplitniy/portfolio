@@ -38,6 +38,9 @@ import { SearchComponent } from './components/search/search.component';
 import { AdminComponent } from './containers/admin/admin.component';
 import { AddDeveloperComponent } from './containers/admin/add-developer/add-developer.component';
 import { AddDeveloperFormComponent } from './components/admin/add-developer-form/add-developer-form.component';
+import { TagsService } from './services/tags.service';
+import { PortfolioService } from './services/portfolio.service';
+import { DeveloperCollectionService } from "app/services/developer-collection.service";
 
 @NgModule({
   declarations: [
@@ -72,7 +75,10 @@ import { AddDeveloperFormComponent } from './components/admin/add-developer-form
     EffectsModule.run(DevelopersCollectionEffect),
   ],
   providers: [
+    DeveloperCollectionService,
     DevelopersService,
+    TagsService,
+    PortfolioService,
     DeveloperExistsGuard
   ],
   bootstrap: [AppComponent]

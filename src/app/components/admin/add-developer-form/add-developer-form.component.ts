@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { DeveloperInterface } from '../../../models/developer/developer.interface';
+import { Developer } from '../../../models/developer/developer';
 
 @Component({
   selector: 'app-add-developer-form',
@@ -7,6 +9,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./add-developer-form.component.scss']
 })
 export class AddDeveloperFormComponent implements OnInit {
+  @Output() add: EventEmitter<DeveloperInterface> = new EventEmitter();
   public user: FormGroup;
 
   constructor(
@@ -21,6 +24,13 @@ export class AddDeveloperFormComponent implements OnInit {
       description: ['', [Validators.required, Validators.minLength(2)]],
       tags: ['', [Validators.required]],
     });
+  }
+
+  onSubmit() {
+    if (this.user.valid) {
+      this.add.emit(this.user.value);
+      this.user.reset();
+    }
   }
 
 }
